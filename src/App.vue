@@ -33,7 +33,7 @@
             
           >
             <v-sheet
-              min-height="70vh"
+              min-height="80vh"
               rounded="lg"
             >
               <div>
@@ -57,29 +57,7 @@
           class="textfield"
         ></v-select>
                
-  <v-file-input
-    accept="image/*"
-    label="File input"
-  ></v-file-input>
-    
-    <v-textarea
-    outlined
-      counter
-      label="Text"
-      :rules="rules"
-      :value="value"
-    ></v-textarea>
-    
-    <v-btn
-  elevation="2"
-  outlined
-  v-on:click="addUser()"
-  id="gumb"
-  > Upri me </v-btn>
-                
-
-
-<v-card
+  <v-card
     class="mx-auto overflow-hidden"
     height="340"
     width="100ram"
@@ -92,12 +70,20 @@
       prominent
       height="75"
     >
-    <v-file-input
-    label="File input"
-    filled
-    prepend-icon="mdi-camera"
-    id="fileinput"
-  ></v-file-input>
+    <v-btn class="gumbovi">
+<v-icon>mdi-fullscreen</v-icon>
+  </v-btn>
+  <v-btn class="gumbovi1">
+<v-icon>mdi-image</v-icon>
+  </v-btn>
+  <v-btn class="gumbovi1">
+<v-icon>mdi-undo</v-icon>
+  </v-btn>
+  <v-btn class="gumbovi1">
+<v-icon>mdi-redo</v-icon>
+  </v-btn>
+    
+  
     </v-app-bar>
 
     
@@ -111,6 +97,17 @@
       class="textarea">
     </textarea>
   </v-card>
+    
+    <v-btn
+  elevation="2"
+  outlined
+  v-on:click="addUser()"
+  id="gumb"
+  > Upri me </v-btn>
+                
+
+
+
 
                 
                 </v-col>
@@ -170,8 +167,16 @@ export default {
   height:255px;
 }
 #gumb{
-  margin-bottom:30  px;
+  margin-top:15px;
 }
-
+.gumbovi{
+  margin-top:14px;
+  
+}
+.gumbovi1{
+  margin-top:14px;
+  margin-left:3px;
+  
+}
 
 </style>
