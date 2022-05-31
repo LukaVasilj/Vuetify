@@ -1,9 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app color="white" flat>
-      <v-tabs centered class="ml-n9" color="grey darken-1">
-        <v-tab> </v-tab>
-      </v-tabs>
+      
     </v-app-bar>
 
     <v-main class="grey lighten-10">
@@ -45,8 +43,12 @@
                       prominent
                       height="75"
                     >
-                      <v-btn class="gumbovi" id="buttonn">
-                        <v-icon>mdi-fullscreen</v-icon>
+
+                      <v-btn class="gumbovi1">
+                        <v-icon>mdi-undo</v-icon>
+                      </v-btn>
+                      <v-btn class="gumbovi1">
+                        <v-icon>mdi-redo</v-icon>
                       </v-btn>
 
                       <label class="custom-file-upload gumb2">
@@ -57,15 +59,11 @@
                         />
                         <v-icon id="ikona">mdi-image</v-icon>
                       </label>
-                      <v-btn class="gumbovi1">
-                        <v-icon>mdi-undo</v-icon>
-                      </v-btn>
-                      <v-btn class="gumbovi1">
-                        <v-icon>mdi-redo</v-icon>
-                      </v-btn>
-                      <div id="display-image"></div><small id="imagetext">.jpg</small>
-                    </v-app-bar>
 
+                      <v-btn class="gumbovi1" id="buttonn">
+                        <v-icon>mdi-fullscreen</v-icon>
+                      </v-btn>
+                    </v-app-bar>
                     <textarea
                       
                       outlined
@@ -150,67 +148,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-.textfield {
-  margin-bottom: 20px;
-}
-.textarea {
-  width: 100%;
-  height: 300px;
-}
-#gumb {
-  margin-top: 15px;
-}
-.gumbovi {
-  margin-top: 14px;
-}
-.gumbovi1 {
-  margin-top: 14px;
-  margin-left: 3px;
-}
-#display-image {
-  margin-top:7px;
-  margin-left:15px;
-  border-radius:10%;
-  width: 100px;
-  height: 50px;
-  border: 1px solid black;
-  background-position: center;
-  background-size: cover;
-  background:#311B92;
-}
-
-input[type="file"] {
-  display: none;
-}
-.custom-file-upload {
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-  width: 50px;
-}
-.gumb2 {
-  border-radius: 10%;
-  margin-left: 3px;
-  margin-top: 14px;
-  height: 38px;
-  width: 62px;
-  background: #272727;
-}
-#ikona {
-  display: flex;
-}
-#imagetext{
-  margin-top:28px;
-  
-}
-
-
+  @import './assets/styles.css';
 </style>
