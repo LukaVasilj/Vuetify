@@ -116,7 +116,7 @@ export default {
   methods: {
     async addUser() {
       let result = await axios.post(
-        process.env.VUE_APP_WHATEVERYOUWANT,
+        process.env.VUE_APP_LINKZATIKETAPI,
         this.ticket
       );
       console.warn(result);
