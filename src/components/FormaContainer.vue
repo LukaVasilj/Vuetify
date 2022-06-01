@@ -25,52 +25,7 @@
                     class="textfield"
                   ></v-select>
 
-                  <v-card
-                    class="mx-auto overflow-hidden"
-                    height="340"
-                    width="100ram"
-                  >
-                    <v-system-bar color="deep-purple darken-4"></v-system-bar>
-
-                    <v-app-bar
-                      color="deep-purple accent-4"
-                      dark
-                      prominent
-                      height="75"
-                    >
-
-                      <v-btn class="gumbovi1">
-                        <v-icon>mdi-undo</v-icon>
-                      </v-btn>
-                      <v-btn class="gumbovi1">
-                        <v-icon>mdi-redo</v-icon>
-                      </v-btn>
-
-                      <label class="custom-file-upload gumb2">
-                        <input
-                          type="file"
-                          id="image-input"
-                          accept="image/jpeg, image/png, image/jpg"
-                        />
-                        <v-icon id="ikona">mdi-image</v-icon>
-                      </label>
-
-                      <v-btn class="gumbovi1" id="buttonn">
-                        <v-icon>mdi-fullscreen</v-icon>
-                      </v-btn>
-                    </v-app-bar>
-                    <textarea
-                      
-                      outlined
-                      counter
-                      label="Textasa"
-                      :rules="rules"
-                      :value="value"
-                      class="textarea"
-                    >
-                    </textarea>
-                    
-                  </v-card>
+                  <tiket-body/>
                    
                   <v-btn
                     elevation="2"
@@ -92,8 +47,10 @@
 </template>
 
 <script>
+import TiketBody from './TiketBody.vue'
 import axios from "axios";
 export default {
+    components: { TiketBody },
     data() {
     return {
       ticket: {
