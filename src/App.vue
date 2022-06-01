@@ -1,5 +1,5 @@
 <template>
-  <TiketForma />
+    <TiketForma />
 </template>
 
 <script>
