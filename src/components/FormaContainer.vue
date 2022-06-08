@@ -1,60 +1,61 @@
 <template>
-    <v-container class="container">
-        <v-row>
-          <v-col cols="12" sm="12">
-            <v-sheet min-height="80vh" rounded="lg">
-              <div>
-                <v-col sm="7">
+  <v-container class="container">
+    <v-layout row justify-space-between align-center>
+      <v-flex xs6 md3>
+        <p>Novi tiket</p>
+      </v-flex>
+      <v-flex xs6 md3>
+        <v-btn class="lista"
+          >Prikaži<br />
+          prethodne tikete</v-btn
+        >
+      </v-flex>
+    </v-layout>
 
-                  <v-textarea
-                    color="deep-purple accent-4"
-                    label="Predmet"
-                    auto-grow
-                    outlined
-                    rows="1"
-                    row-height="15"
-                    v-model="ticket.subject"
-                    class="textfield"
-                  ></v-textarea>
-
-                  <v-select
-                    color="deep-purple accent-4"
-                    :items="items"
-                    label="Outlined style"
-                    outlined
-                    class="textfield"
-                  ></v-select>
-
-                  <tiket-body/>
-                   
-                  <v-btn
-                    elevation="2"
-                    outlined
-                    v-on:click="addUser()"
-                    id="gumb"
-                  >
-                    Upri me
-                  </v-btn>
-
-                  
-                  
-                </v-col>
-              </div>
-            </v-sheet>
-          </v-col>
-        </v-row>
-    </v-container>
+    <v-layout row>
+      <v-flex xs12 md12>
+        <v-sheet class="sheet" rounded="lg">
+          <v-layout row justify-center>
+            <v-flex xs7 md7>
+              <!-- Tiket subject !-->
+              <v-textarea
+                class="subject-area"
+                color="black"
+                label="Predmet"
+                auto-grow
+                outlined
+                rows="1"
+                v-model="ticket.subject"
+              ></v-textarea>
+              <!-- Tiket department !-->
+              <v-select
+                color="black"
+                :items="items"
+                label="Odjel"
+                outlined
+                v-model="ticket.department"
+              ></v-select>
+              <!-- Tiket body !-->
+              <!-- Tiket submit !-->
+              <v-btn elevation="2" outlined v-on:click="addUser()" id="gumb">
+                Upri me
+              </v-btn>
+            </v-flex>
+          </v-layout>
+        </v-sheet>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
-import TiketBody from './TiketBody.vue'
 import axios from "axios";
 export default {
-    components: { TiketBody },
-    data() {
+  data() {
     return {
       ticket: {
         subject: null,
+        department: null,
         body: null,
       },
       items: ["Foo", "Bar", "Fizz", "Buzz"],
@@ -68,34 +69,10 @@ export default {
       );
       console.warn(result);
     },
-    staima() {},
   },
-  mounted() {
-    let Script = document.createElement("script");
-    Script.setAttribute("src", "https://cdn.jsdelivr.net/npm/vue/dist/vue.js");
-    document.head.appendChild(Script);
-
-    document.getElementById("buttonn").addEventListener("click", loadText);
-    function loadText() {
-      console.log("button");
-    }
-  
-    const image_input = document.querySelector("#image-input");
-
-    image_input.addEventListener("change", function () {
-      const reader = new FileReader();
-      reader.addEventListener("load", () => {
-        const uploaded_image = reader.result;
-        document.querySelector(
-          "#display-image"
-        ).style.backgroundImage = `url(${uploaded_image})`;
-      });
-      reader.readAsDataURL(this.files[0]);
-    });
-  },
-}
+};
 </script>
 
 <style>
-
+@import "../assets/css/FormaContainer.css";
 </style>
